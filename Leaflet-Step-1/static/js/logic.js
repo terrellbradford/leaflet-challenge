@@ -3,7 +3,7 @@ var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_we
 
 // function to determine marker size based on magnitude
 function markerSize(magnitude) {
-    return magnitude * 5;
+    return magnitude * 7.5;
 }
 
 // function to return the color based on magnitude
@@ -101,14 +101,14 @@ function createMap(earthquakes) {
     });
   
     // creating the legend
-    var legend = L.control({position: 'bottomright'});
+    var legend = L.control({position: 'bottomleft'});
 
     // add legend to map
     legend.onAdd = function () {
     
         var div = L.DomUtil.create('div', 'info legend')
         
-        div.innerHTML = "<h3>Magnitude Legend</h3><table><tr><th>>= 4</th><td>Red</td></tr><tr><th>>= 3</th><td>Orange</td></tr><tr><th>>= 2</th><td>Yellow</td></tr><tr><th>< 2</th><td>Green</td></tr></table>";
+        div.innerHTML = "<h3>Magnitude Legend</h3><table><tr><th1>>= 4 </th1><td1> Red</td1></tr><br><tr><th2>>= 3</th2><td2> Orange</td2></tr><br><tr><th3>>= 2</th3><td3> Yellow</td3></tr><br><tr><th4>< 2</th><td4> Green</td4></tr></table>";
 
         return div;
     };
